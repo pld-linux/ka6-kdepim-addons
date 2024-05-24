@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	24.02.2
+%define		kdeappsver	24.05.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kdepim-addons
 Summary:	kdepim addons
 Name:		ka6-%{kaname}
-Version:	24.02.2
+Version:	24.05.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	16724a86b35a519eb6601d872499a259
+# Source0-md5:	00ccee177a8569b974d5b77aae8b0339
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel
