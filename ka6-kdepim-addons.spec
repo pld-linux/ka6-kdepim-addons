@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	24.05.2
+%define		kdeappsver	24.08.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kdepim-addons
 Summary:	kdepim addons
 Name:		ka6-%{kaname}
-Version:	24.05.2
+Version:	24.08.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	f17af6ee30f52041199a03bf597cd920
+# Source0-md5:	c0f344b6f383e7311b3514f2fb19b80e
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel
@@ -176,10 +176,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/plugineditorgrammar/kmail_grammalecteplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/plugineditorgrammar/kmail_languagetoolplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/plugineditorinit/kmail_externalcomposereditorplugin.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/korganizer/datenums.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/korganizer/lunarphases.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/korganizer/picoftheday.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/korganizer/thisdayinhistory.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/libksieve/emaillineeditplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/libksieve/imapfoldercompletionplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/mailtransport/mailtransport_sendplugin.so
@@ -206,7 +202,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/viewercommonplugin/messageviewer_expandurlplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/viewercommonplugin/messageviewer_translatorplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/viewerplugin/messageviewer_createeventplugin.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/viewerplugin/messageviewer_createnoteplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/viewerplugin/messageviewer_createtodoplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/viewerplugin/messageviewer_externalscriptplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/pimcommon/customtools/pimcommon_translatorplugin.so
@@ -219,10 +214,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/plugins/plasmacalendarplugins/pimevents/PimEventsConfig.qml
 %attr(755,root,root) %{_libdir}/qt6/qml/org/kde/plasma/PimCalendars/libpimcalendarsplugin.so
 %{_libdir}/qt6/qml/org/kde/plasma/PimCalendars/qmldir
-%{_iconsdir}/hicolor/scalable/status/moon-phase-first-quarter.svg
-%{_iconsdir}/hicolor/scalable/status/moon-phase-full.svg
-%{_iconsdir}/hicolor/scalable/status/moon-phase-last-quarter.svg
-%{_iconsdir}/hicolor/scalable/status/moon-phase-new.svg
 %{_datadir}/qlogging-categories6/kdepim-addons.categories
 %{_datadir}/qlogging-categories6/kdepim-addons.renamecategories
 
