@@ -141,28 +141,37 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libshorturlpluginprivate.so.*.*
 %ghost %{_libdir}/libshorturlpluginprivate.so.6
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/emailaddressselectionldapdialogplugin.so
+%dir %{_libdir}/qt6/plugins/pim6/contacteditor
+%dir %{_libdir}/qt6/plugins/pim6/contacteditor/editorpageplugins
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/contacteditor/editorpageplugins/cryptopageplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/importwizard/evolutionv1importerplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/importwizard/evolutionv2importerplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/importwizard/gearyimporterplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/importwizard/operaimporterplugin.so
+%dir %{_libdir}/qt6/plugins/pim6/kaddressbook
+%dir %{_libdir}/qt6/plugins/pim6/kaddressbook/importexportplugin
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kaddressbook/importexportplugin/kaddressbook_importexportgmxplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kaddressbook/importexportplugin/kaddressbook_importexportldapplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kaddressbook/importexportplugin/kaddressbook_importexportldifplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kaddressbook/importexportplugin/kaddressbook_importexportvcardplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kaddressbook/importexportplugin/kaddressbook_importexportwindowscontactplugin.so
+%dir %{_libdir}/qt6/plugins/pim6/kaddressbook/mainview
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kaddressbook/mainview/kaddressbook_checkgravatarplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kaddressbook/mainview/kaddressbook_mergecontactsplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kaddressbook/mainview/kaddressbook_searchduplicatesplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kaddressbook/mainview/kaddressbook_sendmailplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kaddressbook/mainview/kaddressbook_sendvcardsplugin.so
+%dir %{_libdir}/qt6/plugins/pim6/kmail
+%dir %{_libdir}/qt6/plugins/pim6/kmail/mainview
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/mainview/kmail_akonadidatabasetoolplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/mainview/kmail_antispamplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/mainview/kmail_antivirusplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/mainview/kmail_expertplugin.so
+%dir %{_libdir}/qt6/plugins/pim6/kmail/plugincheckbeforesend
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/plugincheckbeforesend/kmail_automaticaddcontactseditorplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/plugincheckbeforesend/kmail_checkbeforesendeditorplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/plugincheckbeforesend/kmail_confirmaddresseditorplugin.so
+%dir %{_libdir}/qt6/plugins/pim6/kmail/plugineditor
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/plugineditor/kmail_autocorrectioneditorplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/plugineditor/kmail_changecaseeditorplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/plugineditor/kmail_insertemaileditorplugin.so
@@ -172,13 +181,18 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/plugineditor/kmail_quicktextplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/plugineditor/kmail_sharetexteditorplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/plugineditor/kmail_zoomtexteditorplugin.so
+%dir %{_libdir}/qt6/plugins/pim6/kmail/plugineditorconverttext
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/plugineditorconverttext/kmail_markdownplugin.so
+%dir %{_libdir}/qt6/plugins/pim6/kmail/plugineditorgrammar
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/plugineditorgrammar/kmail_grammalecteplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/plugineditorgrammar/kmail_languagetoolplugin.so
+%dir %{_libdir}/qt6/plugins/pim6/kmail/plugineditorinit
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/plugineditorinit/kmail_externalcomposereditorplugin.so
+%dir %{_libdir}/qt6/plugins/pim6/libksieve
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/libksieve/emaillineeditplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/libksieve/imapfoldercompletionplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/mailtransport/mailtransport_sendplugin.so
+%dir %{_libdir}/qt6/plugins/pim6/messageviewer/bodypartformatter
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/bodypartformatter/messageviewer_bodypartformatter_application_gnupgwks.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/bodypartformatter/messageviewer_bodypartformatter_application_mstnef.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/bodypartformatter/messageviewer_bodypartformatter_pkpass.so
@@ -187,7 +201,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/bodypartformatter/messageviewer_bodypartformatter_text_highlighter.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/bodypartformatter/messageviewer_bodypartformatter_text_markdown.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/bodypartformatter/messageviewer_bodypartformatter_text_vcard.so
+%dir %{_libdir}/qt6/plugins/pim6/messageviewer/checkbeforedeleting
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/checkbeforedeleting/kmail_confirmbeforedeletingplugin.so
+%dir %{_libdir}/qt6/plugins/pim6/messageviewer/configuresettings
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/configuresettings/messageviewer_dkimconfigplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/configuresettings/messageviewer_expireaccounttrashfolderconfigplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/configuresettings/messageviewer_folderconfiguresettingsplugin.so
@@ -199,28 +215,40 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/headerstyle/messageviewer_longheaderstyleplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/headerstyle/messageviewer_standardsheaderstyleplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/kf6/ktexttemplate/kitinerary_ktexttemplate_extension.so
+%dir %{_libdir}/qt6/plugins/pim6/messageviewer/viewercommonplugin
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/viewercommonplugin/messageviewer_expandurlplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/viewercommonplugin/messageviewer_translatorplugin.so
+%dir %{_libdir}/qt6/plugins/pim6/messageviewer/viewerplugin
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/viewerplugin/messageviewer_createeventplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/viewerplugin/messageviewer_createtodoplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/viewerplugin/messageviewer_externalscriptplugin.so
+%dir %{_libdir}/qt6/plugins/pim6/pimcommon
+%dir %{_libdir}/qt6/plugins/pim6/pimcommon/customtools
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/pimcommon/customtools/pimcommon_translatorplugin.so
+%dir %{_libdir}/qt6/plugins/pim6/pimcommon/shorturlengine
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/pimcommon/shorturlengine/pimcommon_isgdshorturlengineplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/pimcommon/shorturlengine/pimcommon_tinyurlengineplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/pimcommon/shorturlengine/pimcommon_triopabshorturlengineplugin.so
+%dir %{_libdir}/qt6/plugins/pim6/templateparser
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/templateparser/templateparseraddressrequesterplugin.so
+%dir %{_libdir}/qt6/plugins/pim6/webengineviewer
+%dir %{_libdir}/qt6/plugins/pim6/webengineviewer/urlinterceptor
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/webengineviewer/urlinterceptor/webengineviewer_donottrackplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasmacalendarplugins/pimevents.so
+%dir %{_libdir}/qt6/plugins/plasmacalendarplugins/pimevents
 %{_libdir}/qt6/plugins/plasmacalendarplugins/pimevents/PimEventsConfig.qml
+%dir %{_libdir}/qt6/qml/org/kde/plasma/PimCalendars
 %attr(755,root,root) %{_libdir}/qt6/qml/org/kde/plasma/PimCalendars/libpimcalendarsplugin.so
 %{_libdir}/qt6/qml/org/kde/plasma/PimCalendars/qmldir
 %{_datadir}/qlogging-categories6/kdepim-addons.categories
 %{_datadir}/qlogging-categories6/kdepim-addons.renamecategories
-
-# %{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins/CMakeLists.txt
-# %{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins/plugin.json.impl
-# %{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins/plugineditor.cpp
-# %{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins/plugineditor.h
-# %{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins/plugineditorinterface.cpp
-# %{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins/plugineditorinterface.h
-# %{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins/wizard.json
+%dir %{_datadir}/qtcreator
+%dir %{_datadir}/qtcreator/templates
+%dir %{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins
+%{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins/CMakeLists.txt
+%{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins/plugin.json.impl
+%{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins/plugineditor.cpp
+%{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins/plugineditor.h
+%{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins/plugineditorinterface.cpp
+%{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins/plugineditorinterface.h
+%{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins/wizard.json
