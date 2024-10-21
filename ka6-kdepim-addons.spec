@@ -8,7 +8,7 @@
 Summary:	kdepim addons
 Name:		ka6-%{kaname}
 Version:	24.08.2
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
@@ -27,11 +27,13 @@ BuildRequires:	Qt6WebEngine-devel
 BuildRequires:	Qt6Widgets-devel
 BuildRequires:	cmake >= 3.20
 BuildRequires:	gettext-devel
+BuildRequires:	gpgme-devel
 BuildRequires:	gpgme-qt6-devel >= 1.8.0
 BuildRequires:	ka6-akonadi-calendar-devel >= %{kdeappsver}
 BuildRequires:	ka6-akonadi-contacts-devel >= %{kdeappsver}
 BuildRequires:	ka6-akonadi-devel >= %{kdeappsver}
 BuildRequires:	ka6-akonadi-import-wizard-devel >= %{kdeappsver}
+BuildRequires:	ka6-akonadi-mime-devel >= %{kdeappsver}
 BuildRequires:	ka6-akonadi-notes-devel >= %{kdeappsver}
 BuildRequires:	ka6-calendarsupport-devel >= %{kdeappsver}
 BuildRequires:	ka6-eventviews-devel >= %{kdeappsver}
@@ -43,6 +45,7 @@ BuildRequires:	ka6-kidentitymanagement-devel >= %{kdeappsver}
 BuildRequires:	ka6-kimap-devel >= %{kdeappsver}
 BuildRequires:	ka6-kitinerary-devel >= %{kdeappsver}
 BuildRequires:	ka6-kmailtransport-devel >= %{kdeappsver}
+BuildRequires:	ka6-kmime-devel >= %{kdeappsver}
 BuildRequires:	ka6-kpimtextedit-devel >= %{kdeappsver}
 BuildRequires:	ka6-kpkpass-devel >= %{kdeappsver}
 BuildRequires:	ka6-ktnef-devel >= %{kdeappsver}
@@ -55,7 +58,9 @@ BuildRequires:	ka6-mailimporter-devel >= %{kdeappsver}
 BuildRequires:	ka6-messagelib-devel >= %{kdeappsver}
 BuildRequires:	ka6-pimcommon-devel >= %{kdeappsver}
 BuildRequires:	kf6-extra-cmake-modules >= %{kframever}
+BuildRequires:	kf6-kcalendarcore-devel >= %{kframever}
 BuildRequires:	kf6-kconfig-devel >= %{kframever}
+BuildRequires:	kf6-kcontacts-devel >= %{kframever}
 BuildRequires:	kf6-kdbusaddons-devel >= %{kframever}
 BuildRequires:	kf6-kdeclarative-devel >= %{kframever}
 BuildRequires:	kf6-kholidays-devel >= %{kframever}
@@ -63,9 +68,11 @@ BuildRequires:	kf6-ki18n-devel >= %{kframever}
 BuildRequires:	kf6-kiconthemes-devel >= %{kframever}
 BuildRequires:	kf6-kio-devel >= %{kframever}
 BuildRequires:	kf6-kparts-devel >= %{kframever}
+BuildRequires:	kf6-ktexttemplate-devel >= %{kframever}
 BuildRequires:	kf6-kxmlgui-devel >= %{kframever}
 BuildRequires:	kf6-prison-devel >= %{kframever}
 BuildRequires:	kf6-syntax-highlighting-devel >= %{kframever}
+BuildRequires:	ktextaddons-devel >= 1.5.4
 BuildRequires:	libmarkdown-devel
 BuildRequires:	ninja
 BuildRequires:	qt6-build >= %{qtver}
@@ -73,8 +80,8 @@ BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	shared-mime-info
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
-ExcludeArch:	x32
 Obsoletes:	ka5-%{kaname} < %{version}
+ExcludeArch:	x32 i686
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -242,13 +249,13 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/qml/org/kde/plasma/PimCalendars/qmldir
 %{_datadir}/qlogging-categories6/kdepim-addons.categories
 %{_datadir}/qlogging-categories6/kdepim-addons.renamecategories
-%dir %{_datadir}/qtcreator
-%dir %{_datadir}/qtcreator/templates
-%dir %{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins
-%{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins/CMakeLists.txt
-%{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins/plugin.json.impl
-%{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins/plugineditor.cpp
-%{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins/plugineditor.h
-%{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins/plugineditorinterface.cpp
-%{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins/plugineditorinterface.h
-%{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins/wizard.json
+#%dir %{_datadir}/qtcreator
+#%dir %{_datadir}/qtcreator/templates
+#%dir %{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins
+#%{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins/CMakeLists.txt
+#%{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins/plugin.json.impl
+#%{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins/plugineditor.cpp
+#%{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins/plugineditor.h
+#%{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins/plugineditorinterface.cpp
+#%{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins/plugineditorinterface.h
+#%{_datadir}/qtcreator/templates/kmaileditorconvertertextplugins/wizard.json
