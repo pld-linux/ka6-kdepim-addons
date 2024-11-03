@@ -8,7 +8,7 @@
 Summary:	kdepim addons
 Name:		ka6-%{kaname}
 Version:	24.08.2
-Release:	2
+Release:	4
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
@@ -216,11 +216,14 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/configuresettings/messageviewer_folderconfiguresettingsplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/configuresettings/messageviewer_gravatarconfigplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/configuresettings/messageviewer_openurlwithconfigplugin.so
+%dir %{_libdir}/qt6/plugins/pim6/messageviewer/headerstyle
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/headerstyle/messageviewer_briefheaderstyleplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/headerstyle/messageviewer_fancyheaderstyleplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/headerstyle/messageviewer_grantleeheaderstyleplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/headerstyle/messageviewer_longheaderstyleplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/headerstyle/messageviewer_standardsheaderstyleplugin.so
+%dir %{_libdir}/qt6/plugins/pim6/messageviewer/kf6
+%dir %{_libdir}/qt6/plugins/pim6/messageviewer/kf6/ktexttemplate
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/kf6/ktexttemplate/kitinerary_ktexttemplate_extension.so
 %dir %{_libdir}/qt6/plugins/pim6/messageviewer/viewercommonplugin
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/viewercommonplugin/messageviewer_expandurlplugin.so
