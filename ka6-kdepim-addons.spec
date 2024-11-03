@@ -8,7 +8,7 @@
 Summary:	kdepim addons
 Name:		ka6-%{kaname}
 Version:	24.08.2
-Release:	4
+Release:	5
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
@@ -68,11 +68,11 @@ BuildRequires:	kf6-ki18n-devel >= %{kframever}
 BuildRequires:	kf6-kiconthemes-devel >= %{kframever}
 BuildRequires:	kf6-kio-devel >= %{kframever}
 BuildRequires:	kf6-kparts-devel >= %{kframever}
+BuildRequires:	kf6-ktextaddons-devel >= 1.5.4
 BuildRequires:	kf6-ktexttemplate-devel >= %{kframever}
 BuildRequires:	kf6-kxmlgui-devel >= %{kframever}
 BuildRequires:	kf6-prison-devel >= %{kframever}
 BuildRequires:	kf6-syntax-highlighting-devel >= %{kframever}
-BuildRequires:	ktextaddons-devel >= 1.5.4
 BuildRequires:	libmarkdown-devel
 BuildRequires:	ninja
 BuildRequires:	qt6-build >= %{qtver}
