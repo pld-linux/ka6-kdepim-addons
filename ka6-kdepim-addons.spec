@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	24.12.3
+%define		kdeappsver	25.04.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kdepim-addons
 Summary:	kdepim addons
 Name:		ka6-%{kaname}
-Version:	24.12.3
+Version:	25.04.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	fc5ea180bc953277df32ccd4d7cbe352
+# Source0-md5:	cc584aa9c7ce3b133c6c67972e11bd19
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel
@@ -146,7 +146,6 @@ rm -rf $RPM_BUILD_ROOT
 %ghost %{_libdir}/libopenurlwithconfigure.so.6
 %attr(755,root,root) %{_libdir}/libshorturlpluginprivate.so.*.*
 %ghost %{_libdir}/libshorturlpluginprivate.so.6
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/emailaddressselectionldapdialogplugin.so
 %dir %{_libdir}/qt6/plugins/pim6/contacteditor
 %dir %{_libdir}/qt6/plugins/pim6/contacteditor/editorpageplugins
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/contacteditor/editorpageplugins/cryptopageplugin.so
@@ -172,6 +171,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/mainview/kmail_akonadidatabasetoolplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/mainview/kmail_antispamplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/mainview/kmail_antivirusplugin.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/mainview/kmail_checkfoldersizeaccount.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/mainview/kmail_expertplugin.so
 %dir %{_libdir}/qt6/plugins/pim6/kmail/plugincheckbeforesend
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/plugincheckbeforesend/kmail_automaticaddcontactseditorplugin.so
@@ -249,6 +249,13 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/qt6/qml/org/kde/plasma/PimCalendars
 %attr(755,root,root) %{_libdir}/qt6/qml/org/kde/plasma/PimCalendars/libpimcalendarsplugin.so
 %{_libdir}/qt6/qml/org/kde/plasma/PimCalendars/qmldir
+%dir %{_libdir}/qt6/plugins/pim6/kcms/kleopatra
+%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kcms/kleopatra/kcm_kmail_gnupgsystem.so
+%dir %{_libdir}/qt6/plugins/pim6/ldapactivities
+%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/ldapactivities/kldapactivitiesplugin.so
+%dir %{_libdir}/qt6/plugins/pim6/mailtransportactivities
+%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/mailtransportactivities/kmailtransportactivitiesplugin.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/emailaddressselectionldapdialogplugin.so
 %{_datadir}/qlogging-categories6/kdepim-addons.categories
 %{_datadir}/qlogging-categories6/kdepim-addons.renamecategories
 #%dir %{_datadir}/qtcreator
