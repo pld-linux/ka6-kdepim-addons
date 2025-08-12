@@ -8,7 +8,7 @@
 Summary:	kdepim addons
 Name:		ka6-%{kaname}
 Version:	25.04.3
-Release:	2
+Release:	3
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
@@ -42,6 +42,7 @@ BuildRequires:	ka6-kcalutils-devel >= %{kdeappsver}
 BuildRequires:	ka6-kidentitymanagement-devel >= %{kdeappsver}
 BuildRequires:	ka6-kimap-devel >= %{kdeappsver}
 BuildRequires:	ka6-kitinerary-devel >= %{kdeappsver}
+BuildRequires:	ka6-kldap-devel >= %{kdeappsver}
 BuildRequires:	ka6-kmailtransport-devel >= %{kdeappsver}
 BuildRequires:	ka6-kmime-devel >= %{kdeappsver}
 BuildRequires:	ka6-kpimtextedit-devel >= %{kdeappsver}
