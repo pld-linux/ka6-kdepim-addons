@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.04.3
+%define		kdeappsver	25.08.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kdepim-addons
 Summary:	kdepim addons
 Name:		ka6-%{kaname}
-Version:	25.04.3
-Release:	4
+Version:	25.08.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	bc197868565fd2206ef3701a29f9fe87
+# Source0-md5:	44a084cc12bcd88c838f237318314a35
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel
@@ -147,6 +147,8 @@ rm -rf $RPM_BUILD_ROOT
 %ghost %{_libdir}/libopenurlwithconfigure.so.6
 %attr(755,root,root) %{_libdir}/libshorturlpluginprivate.so.*.*
 %ghost %{_libdir}/libshorturlpluginprivate.so.6
+%ghost %{_libdir}/libKPim6AutoGenerateText.so.6
+%attr(755,root,root) %{_libdir}/libKPim6AutoGenerateText.so.*.*
 %dir %{_libdir}/qt6/plugins/pim6/contacteditor
 %dir %{_libdir}/qt6/plugins/pim6/contacteditor/editorpageplugins
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/contacteditor/editorpageplugins/cryptopageplugin.so
@@ -172,13 +174,17 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/mainview/kmail_akonadidatabasetoolplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/mainview/kmail_antispamplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/mainview/kmail_antivirusplugin.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/mainview/kmail_checkfoldersizeaccount.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/mainview/kmail_expertplugin.so
 %dir %{_libdir}/qt6/plugins/pim6/kmail/plugincheckbeforesend
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/plugincheckbeforesend/kmail_automaticaddcontactseditorplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/plugincheckbeforesend/kmail_checkbeforesendeditorplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/plugincheckbeforesend/kmail_confirmaddresseditorplugin.so
 %dir %{_libdir}/qt6/plugins/pim6/kmail/plugineditor
+%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/plugineditor/kmail_aitooleditorplugin.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/plugineditor/kmail_askautogeneratetexteditorplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/plugineditor/kmail_autocorrectioneditorplugin.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/plugineditor/kmail_autogenerateanswerseditorplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/plugineditor/kmail_changecaseeditorplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/plugineditor/kmail_insertemaileditorplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kmail/plugineditor/kmail_insertshorturleditorplugin.so
@@ -256,6 +262,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/qt6/plugins/pim6/mailtransportactivities
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/mailtransportactivities/kmailtransportactivitiesplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/emailaddressselectionldapdialogplugin.so
+
 %{_datadir}/qlogging-categories6/kdepim-addons.categories
 %{_datadir}/qlogging-categories6/kdepim-addons.renamecategories
 #%dir %{_datadir}/qtcreator
