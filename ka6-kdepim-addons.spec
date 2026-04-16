@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.12.3
+%define		kdeappsver	26.04.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kdepim-addons
 Summary:	kdepim addons
 Name:		ka6-%{kaname}
-Version:	25.12.3
-Release:	2
+Version:	26.04.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	991fe4da8bbf8938798b0f5136a5b706
+# Source0-md5:	d763ada82cd3f9fd25d7187a30b86923
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel
@@ -263,6 +263,11 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/qt6/plugins/pim6/mailtransportactivities
 %{_libdir}/qt6/plugins/pim6/mailtransportactivities/kmailtransportactivitiesplugin.so
 %{_libdir}/qt6/plugins/pim6/akonadi/emailaddressselectionldapdialogplugin.so
+%dir %{_libdir}/qt6/plugins/autogeneratetext
+%dir %{_libdir}/qt6/plugins/autogeneratetext/toolplugins
+%{_libdir}/qt6/plugins/autogeneratetext/toolplugins/kaichat_addressbookplugin.so
+%{_libdir}/qt6/plugins/autogeneratetext/toolplugins/kaichat_calendarplugin.so
+%{_libdir}/qt6/plugins/pim6/messageviewer/viewercommonplugin/messageviewer_aiplugin.so
 
 %{_datadir}/qlogging-categories6/kdepim-addons.categories
 %{_datadir}/qlogging-categories6/kdepim-addons.renamecategories
