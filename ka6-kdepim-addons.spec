@@ -90,6 +90,11 @@ Addons for KDE PIM applications, such as extensions for KMail,
 additional themes, and plugins providing extra or advanced
 functionality.
 
+%description -l pl.UTF-8
+Dodatki do aplikacji KDE PIM, takie jak rozszerzenia do KMail,
+dodatkowe tematy i wtyczki dostarczające dodatkowe lub rozszerzone
+funkcjonalności.
+
 %prep
 %setup -q -n %{kaname}-%{version}
 
