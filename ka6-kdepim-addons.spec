@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	26.04.2
+%define		kdeappsver	26.04.3
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kdepim-addons
 Summary:	kdepim addons
 Name:		ka6-%{kaname}
-Version:	26.04.2
+Version:	26.04.3
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	5f37a2a8ab451473c0c3f4e2e0ae0f52
+# Source0-md5:	1fce3a58f1bc8458b1619538d81f693a
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel
@@ -133,6 +133,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/kmail_clamav.sh
 %attr(755,root,root) %{_bindir}/kmail_fprot.sh
 %attr(755,root,root) %{_bindir}/kmail_sav.sh
+%ghost %{_libdir}/libadblockplugin.so.6
+%{_libdir}/libadblockplugin.so.*.*
 %{_libdir}/libakonadidatasetools.so.*.*
 %ghost %{_libdir}/libakonadidatasetools.so.6
 %{_libdir}/libdkimverifyconfigure.so.*.*
@@ -254,6 +256,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/plugins/pim6/templateparser/templateparseraddressrequesterplugin.so
 %dir %{_libdir}/qt6/plugins/pim6/webengineviewer
 %dir %{_libdir}/qt6/plugins/pim6/webengineviewer/urlinterceptor
+%{_libdir}/qt6/plugins/pim6/webengineviewer/urlinterceptor/webengineviewer_adblockplugin.so
 %{_libdir}/qt6/plugins/pim6/webengineviewer/urlinterceptor/webengineviewer_donottrackplugin.so
 %{_libdir}/qt6/plugins/plasmacalendarplugins/pimevents.so
 %dir %{_libdir}/qt6/plugins/plasmacalendarplugins/pimevents
