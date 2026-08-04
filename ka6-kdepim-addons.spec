@@ -8,11 +8,13 @@
 Summary:	kdepim addons
 Name:		ka6-%{kaname}
 Version:	26.04.3
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
 # Source0-md5:	1fce3a58f1bc8458b1619538d81f693a
+Source1:	%{kaname}-vendor-crates-%{version}.tar.xz
+# Source1-md5:	9a72d93d58d47afd5c665122313aefb3
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel
@@ -25,6 +27,7 @@ BuildRequires:	Qt6Test-devel
 BuildRequires:	Qt6WebChannel-devel >= 5.11.1
 BuildRequires:	Qt6WebEngine-devel
 BuildRequires:	Qt6Widgets-devel
+BuildRequires:	cargo
 BuildRequires:	cmake >= 3.20
 BuildRequires:	gettext-devel
 BuildRequires:	gpgme-devel
@@ -96,25 +99,39 @@ dodatkowe tematy i wtyczki dostarczające dodatkowe lub rozszerzone
 funkcjonalności.
 
 %prep
-%setup -q -n %{kaname}-%{version}
+%setup -q -n %{kaname}-%{version} -a1
+# Use our offline registry
+export CARGO_HOME="$(pwd)/.cargo"
+
+mkdir -p "$CARGO_HOME"
+cat >.cargo/config <<EOF
+[source.crates-io]
+replace-with = 'vendored-sources'
+
+[source.vendored-sources]
+directory = '$PWD/vendor'
+EOF
 
 %build
-%cmake \
-	-B build \
+export CARGO_HOME="$(pwd)/.cargo"
+%cmake -B build \
 	-G Ninja \
 	%{!?with_tests:-DBUILD_TESTING=OFF} \
 	-DKDE_INSTALL_DOCBUNDLEDIR=%{_kdedocdir} \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
-	-DQT_MAJOR_VERSION=6
+	-DQT_MAJOR_VERSION=6 \
+	-DRust_CARGO_TARGET=%cargo_target
+
 %ninja_build -C build
 
 %if %{with tests}
 ctest --test-dir build
 %endif
 
-
 %install
 rm -rf $RPM_BUILD_ROOT
+export CARGO_HOME="$(pwd)/.cargo"
+
 %ninja_install -C build
 
 %find_lang %{kaname} --all-name --with-kde
