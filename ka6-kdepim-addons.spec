@@ -1,20 +1,20 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	26.04.3
-%define		kframever	5.94.0
+%define		kdeappsver	26.08.0
+%define		kframever	6.29.0
 %define		qtver		5.15.2
 %define		kaname		kdepim-addons
 Summary:	kdepim addons
 Name:		ka6-%{kaname}
-Version:	26.04.3
-Release:	2
+Version:	26.08.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	1fce3a58f1bc8458b1619538d81f693a
+# Source0-md5:	39a075155a1b735d291437fe2e2fe8ed
 Source1:	%{kaname}-vendor-crates-%{version}.tar.xz
-# Source1-md5:	9a72d93d58d47afd5c665122313aefb3
+# Source1-md5:	6e5bb12ee1d80fd9af3d0f6505b798e7
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel
@@ -47,7 +47,6 @@ BuildRequires:	ka6-kimap-devel >= %{kdeappsver}
 BuildRequires:	ka6-kitinerary-devel >= %{kdeappsver}
 BuildRequires:	ka6-kldap-devel >= %{kdeappsver}
 BuildRequires:	ka6-kmailtransport-devel >= %{kdeappsver}
-BuildRequires:	ka6-kmime-devel >= %{kdeappsver}
 BuildRequires:	ka6-kpimtextedit-devel >= %{kdeappsver}
 BuildRequires:	ka6-kpkpass-devel >= %{kdeappsver}
 BuildRequires:	ka6-ktnef-devel >= %{kdeappsver}
@@ -69,8 +68,9 @@ BuildRequires:	kf6-kholidays-devel >= %{kframever}
 BuildRequires:	kf6-ki18n-devel >= %{kframever}
 BuildRequires:	kf6-kiconthemes-devel >= %{kframever}
 BuildRequires:	kf6-kio-devel >= %{kframever}
+BuildRequires:	kf6-kmime-devel >= %{kframever}
 BuildRequires:	kf6-kparts-devel >= %{kframever}
-BuildRequires:	kf6-ktextaddons-devel >= 1.5.4
+BuildRequires:	kf6-ktextaddons-devel >= 2.1.2
 BuildRequires:	kf6-ktexttemplate-devel >= %{kframever}
 BuildRequires:	kf6-kxmlgui-devel >= %{kframever}
 BuildRequires:	kf6-prison-devel >= %{kframever}
