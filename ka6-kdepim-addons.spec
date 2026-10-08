@@ -1,20 +1,20 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	26.08.1
+%define		kdeappsver	26.08.2
 %define		kframever	6.29.0
 %define		qtver		5.15.2
 %define		kaname		kdepim-addons
 Summary:	kdepim addons
 Name:		ka6-%{kaname}
-Version:	26.08.1
+Version:	26.08.2
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	2385a52dd1b6ddfd534a529bd80563e9
+# Source0-md5:	1497baaa6e0afc1496a590ae5d8c8d59
 Source1:	%{kaname}-vendor-crates-%{version}.tar.xz
-# Source1-md5:	2c7812b013c6773d54417a2d118661b9
+# Source1-md5:	412d9eec46fc912df1648032c2d42f2d
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel
@@ -83,6 +83,7 @@ BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	shared-mime-info
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
+Requires:	%{name}-data = %{version}-%{release}
 %requires_eq_to Qt6Core Qt6Core-devel
 Obsoletes:	ka5-%{kaname} < %{version}
 ExcludeArch:	x32 i686
@@ -97,6 +98,18 @@ functionality.
 Dodatki do aplikacji KDE PIM, takie jak rozszerzenia do KMail,
 dodatkowe tematy i wtyczki dostarczające dodatkowe lub rozszerzone
 funkcjonalności.
+
+%package data
+Summary:	Data files for %{kaname}
+Summary(pl.UTF-8):	Dane dla %{kaname}
+Group:		X11/Libraries
+BuildArch:	noarch
+
+%description data
+Data files for %{kaname}.
+
+%description data -l pl.UTF-8
+Dane dla %{kaname}.
 
 %prep
 %setup -q -n %{kaname}-%{version} -a1
@@ -142,7 +155,7 @@ rm -rf $RPM_BUILD_ROOT
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
 
-%files -f %{kaname}.lang
+%files
 %defattr(644,root,root,755)
 /etc/xdg/kmail.antispamrc
 /etc/xdg/kmail.antivirusrc
@@ -294,6 +307,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/plugins/autogeneratetext/toolplugins/kaichat_calendarplugin.so
 %{_libdir}/qt6/plugins/pim6/messageviewer/viewercommonplugin/messageviewer_aiplugin.so
 
+%files data -f %{kaname}.lang
+%defattr(644,root,root,755)
 %{_datadir}/qlogging-categories6/kdepim-addons.categories
 %{_datadir}/qlogging-categories6/kdepim-addons.renamecategories
 #%dir %{_datadir}/qtcreator
